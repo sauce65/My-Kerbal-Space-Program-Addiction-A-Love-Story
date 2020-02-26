@@ -1,0 +1,38 @@
+import numpy as np
+import math
+from matplotlib import pyplot as plt
+
+
+x = np.arange(0, 4*np.pi, 0.1)  # defines the range of the calculation between zero and 4pi, in steps of 0.1 radians
+
+y = np.sin(x) # simple sine curve
+y2 = np.sin(x + 1) # adds 1 to the sin curve at each value x
+y3 = np.sin(x - 1) # subtracts 1 at each value x
+
+plt.plot(x, y)
+plt.plot(x, y2)
+plt.plot(x, y3)
+plt.show()
+plt.close()
+
+y4 = np.sin(x) + 1 # raises the curve up by 1
+y5 = np.sin(x) - 1 # lowers by 1
+
+plt.plot(x, y4)
+plt.plot(x, y5)
+plt.show()
+plt.close()
+
+y6 = 2 * np.sin(x) # increases the AMPLITUDE of the curve by a factor of 2
+y7 = 0.5 * np.sin(x) # cuts amplitude in half
+y8 = 1.5 * np.sin(x) # intermediate modification
+
+plt.plot(x, y6)
+plt.plot(x, y7)
+plt.plot(x, y8)
+plt.show()
+
+plt.plot(x, y) # vanilla sine curve
+plt.plot(2*x, y) # wavelength stretched by factor of 2
+plt.plot(0.5*x, y) # wavelength condensed to half
+plt.show()
