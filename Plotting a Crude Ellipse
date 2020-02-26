@@ -1,0 +1,18 @@
+# Drived roughly from formulae at: https://en.wikipedia.org/wiki/Conic_section#Conic_parameters
+
+import numpy as np
+import math
+from matplotlib import pyplot as plt
+x = np.arange(0, 4*np.pi, 0.1)
+a = 2
+b = 2
+z = ((1 * b**2) * a **2)- x**2
+y = np.sqrt(z)
+plt.axvline(x=0)
+plt.axhline(y=0)
+plt.plot(x, y)
+plt.plot(x, -y)
+plt.plot(-x, y)
+plt.plot(-x, -y)
+plt.plot()
+plt.show()
