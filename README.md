@@ -7,4 +7,4 @@ rendezvous, but none that I have found are tailored just for the kinds of things
 python maths to the point where I can simulate the heavenly bodies in-game and plan very complex launch windows and gravity assists!
 
 Besides feeding my feverish addiction to this punishing space game, this application will give me a fun pathway to learning a huge amount 
-of math, it will be a genuinely useful application that I can program myself end-to-end.
+of math, coding/compsci, and it will result in a genuinely useful application that I can tailor to my needs and will have developed end-to-end.
