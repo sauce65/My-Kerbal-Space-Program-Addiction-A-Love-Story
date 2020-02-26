@@ -1,4 +1,7 @@
 # Drived roughly from formulae at: https://en.wikipedia.org/wiki/Conic_section#Conic_parameters
+# I put together a plot of a quarter of an ellipse, then reflected it to generate a whole ellipse in the plot.  However, the curve is
+# kinked and I am also getting the following error in PyCharm:
+# "RuntimeWarning: invalid value encountered in sqrt y = np.sqrt(z)"
 
 import numpy as np
 import math
