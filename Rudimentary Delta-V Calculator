@@ -1,0 +1,13 @@
+def dV_calc():
+    m0 = int(input('Enter Wet Mass: ')) #initial total mass/wet mass
+    mf = int(input('Enter Dry Mass: ')) #final total mass/dry mass
+    Isp = int(input('Enter Isp: ')) #specific impulse in seconds
+    g0 = 9.80665 #standard gravity
+    ve = Isp*g0 #effective exhaust velocity
+    dV = ve * (np.log(m0/mf))
+    print(dV)
+
+dV_calc()
+
+# Lays the foundation for a more robust calculation of dV.  This function will be central to the application, and it is important to
+# establish the absolute basics early.
