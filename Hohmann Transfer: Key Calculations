@@ -1,0 +1,48 @@
+import math
+import numpy as np
+
+# https://www.faa.gov/about/office_org/headquarters_offices/avs/offices/aam/cami/library/online_libraries/aerospace_medicine/tutorial/media/III.4.1.5_Maneuvering_in_Space.pdf
+
+mu = 398600 # gravitational parameter (km3/s2) = 3.986 × 105 km3/s2 for Earth
+
+R_orbit1 = 6570 # radius of orbit 1
+R_orbit2 = 42160 # radius of orbit 2
+
+a_orbit1 = R_orbit1 # orbit 1 is circular so the semi-major axis is just the radius of the orbit
+
+a_transfer = (R_orbit1 + R_orbit2) / 2 # semi-major axis of transfer orbit
+e_transfer = -(mu / (2 * a_transfer)) # mechanical energy of the transfer orbit
+
+e_orbit1 = -(mu / (2 * a_transfer)) # mechanical energy of orbit 1
+a_orbit2 = R_orbit2 # orbit 2 is circular so the semi-major axis is just the radius of the orbit
+
+vo1 =  2*((mu/R_orbit1) + e_orbit1)
+V_orbit1 = np.sqrt(vo1) # velocity in orbit 1
+
+
+vo1_transfer =  2*((mu/a_orbit1) + e_transfer)
+V_transfer_o1 = np.sqrt(vo1_transfer) # velocity in transfer orbit at orbit 1
+
+dV1 = np.abs((V_transfer_o1 - V_orbit1)) # delta-V required to enter transfer orbit from orbit 1
+
+
+e_orbit2 = -(mu / (2 * a_transfer)) # mechanical energy of orbit 1
+vo2 =  2*((mu/a_orbit1) + e_orbit2)
+v_orbit2 = np.sqrt(vo2) # velocity in orbit 2
+
+vo2_transfer =  2*((mu/R_orbit2) + e_transfer)
+V_transfer_o2 = np.sqrt(vo2_transfer) # velocity in transfer orbit at orbit 2
+
+e_orbit2 = -(mu / (2 * a_orbit2)) # mechanical energy of orbit 2
+
+vo2 =  2*((mu/R_orbit2) + e_orbit2)
+V_orbit2 = np.sqrt(vo2_transfer) # velocity in transfer orbit at orbit 2
+
+dV2 = np.abs((v_orbit2 - V_transfer_o2)) # delta-V requried to enter orbit 2 from apoapsis of transfer orbit
+
+dV_total = dV1 + dV2 # total delta-V required for the Hohmann Transfer
+
+t_of = (a_transfer **3) / mu
+TOF = np.pi * np.sqrt(t_of) # transfer orbit's TIME OF FLIGHT
+
+print(TOF)
