@@ -2,7 +2,7 @@ import math
 import numpy as np
 
 # https://www.faa.gov/about/office_org/headquarters_offices/avs/offices/aam/cami/library/online_libraries/aerospace_medicine/tutorial/media/III.4.1.5_Maneuvering_in_Space.pdf
-
+# https://ocw.mit.edu/courses/aeronautics-and-astronautics/16-07-dynamics-fall-2009/lecture-notes/MIT16_07F09_Lec17.pdf
 mu = 398600 # gravitational parameter (km3/s2) = 3.986 × 105 km3/s2 for Earth
 
 R_orbit1 = 6570 # radius of orbit 1
